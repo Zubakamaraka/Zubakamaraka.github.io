@@ -1,0 +1,513 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title> Форма заказа полиса автострахования</title>
+
+<script type="text/javascript">
+	var totalDrivers = 5;
+	var addedDrivers = 0;
+	
+	function addDriver(){
+		if(addedDrivers >= totalDrivers){
+			alert("Добавлено максимальное количество водителей!");
+			return;
+		}
+		
+		addedDrivers += 1;
+		document.getElementById("driver" + addedDrivers).style.display = "block";
+		
+		document.getElementById("lnkAddDriver").style.display = "block";
+	}
+	
+	function removeDriver(id){
+		if(addedDrivers != id){
+			alert("Удалите сначала последнего водителя!");
+			return;
+		}
+		document.getElementById("driver" + id).style.display = "none";
+		addedDrivers -= 1;
+	}
+	
+	function removeAllDrivers(){
+		for(var i = 1; i <= totalDrivers; i++){
+			document.getElementById("driver" + i).style.display = "none";
+		}
+		document.getElementById("lnkAddDriver").style.display = "none";
+		addedDrivers = 0;
+	}
+	
+	function switchDrivers(){
+		if(document.getElementById("chbxLimits").checked){
+			removeAllDrivers();
+		} else {
+			addDriver();
+		}
+	}
+</script>
+
+<style>
+      #Polis{
+        background: rgba(102, 102, 102, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #okno {
+        width: 500px;
+        height: 100px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #0000cc;
+        border-radius: 10px;
+        color: #0000cc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+      }
+      #Polis:target {display: block;}
+      .close {
+        display: inline-block;
+        border: 1px solid #0000cc;
+        color: #0000cc;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        background: #f2f2f2;
+        font-size: 14pt;
+        cursor:pointer;
+      }
+      .close:hover {background: #e6e6ff;}
+	body {
+		font-family: arial;
+	}
+	
+	table {
+		font-size: 14pt;
+		border-collapse: collapse;
+		margin-top: 20px;
+	}
+	
+	.tableDriver {
+		display: none;
+	}
+	
+	td {
+		padding: 5px;
+		border: solid #000 1px;
+	}
+	
+	.header{
+		text-align: center;
+		font-weight: bold;
+		background-color: #f0f0f0;
+		width: 100%;
+	}
+	
+	.lbl {
+		width: 300px;;
+	}
+	
+	.inp {
+		width: 300px;
+	}
+	
+	.inp input, select {
+		width: 100%;
+		padding: 3px;
+	}
+	
+</style>
+
+</head>
+
+<body>
+      <form action="handler.php">
+     <p><b><big>Укажите вид заказываемого полиса автострахования</big></b></p>
+     <p><input name="Polis1" type="radio" value="Osago"> КАСКО</p>
+     <p><input name="Polis1" type="radio" value="Kasko"> ОСАГО</p>
+      </form> 
+	<table id="Avto">
+
+		<tr>
+			<td class="header" colspan="2">
+		Данные по автомобилю		 
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Тип транспортного средства
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Марка автомобиля
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Модель автомобиля
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+			      Год изготовления
+			</td>
+			<td class="inp">
+                        	<input type="text" />
+			</td>
+		<tr>
+			<td class="lbl">
+				Мощность двигателя
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+			<tr>
+			<td class="lbl">
+				Город обслуживания
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+	
+		</tr>
+	</table>
+	<table id="Strah">
+		<tr>
+			<td class="header" colspan="2">
+				Данные о страхователе 
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Фамилия
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Имя
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Отчество
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Дата рождения
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+			<tr>
+			<td class="lbl">
+				Серия и номер ВУ
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+			<tr>
+			<td class="lbl">
+				Дата начала стажа
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+			<tr>
+			<td class="lbl">
+				Электронная почта
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+	            		<tr>
+			<td class="lbl">
+				Номер телефона
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="lbl">
+				Пол
+			</td>
+			<td class="inp">
+				<select>
+					<option> </option>
+					<option>Мужской</option>
+					<option>Женский</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+
+
+	<input type="checkbox" id="chbxLimits"  onclick="switchDrivers()"> Неограниченное количество водителей
+
+	<br />
+	
+	<table id="driver1" class="tableDriver" style="display: block">
+
+		<tr>
+			<td class="header" colspan="2">
+				Водитель 1 [<a href="#" onclick="removeDriver(1);">удалить</a>]
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Фамилия
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Имя
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Отчество
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Пол
+			</td>
+			<td class="inp">
+				<select>
+					<option> </option>
+					<option>Мужской</option>
+					<option>Женский</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	
+	<table id="driver2" class="tableDriver">
+		<tr>
+			<td class="header" colspan="2">
+				Водитель 2 [<a href="#" onclick="removeDriver(2);">удалить</a>]
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Фамилия
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Имя
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Отчество
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Пол
+			</td>
+			<td class="inp">
+				<select>
+					<option> </option>
+					<option>Мужской</option>
+					<option>Женский</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	
+	<table id="driver3" class="tableDriver">
+		<tr>
+			<td class="header" colspan="2">
+				Водитель 3 [<a href="#" onclick="removeDriver(3);">удалить</a>]
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Фамилия
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Имя
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Отчество
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Пол
+			</td>
+			<td class="inp">
+				<select>
+					<option> </option>
+					<option>Мужской</option>
+					<option>Женский</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	
+	<table id="driver4" class="tableDriver">
+		<tr>
+			<td class="header" colspan="2">
+				Водитель 4 [<a href="#" onclick="removeDriver(4);">удалить</a>]
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Фамилия
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Имя
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Отчество
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Пол
+			</td>
+			<td class="inp">
+				<select>
+					<option> </option>
+					<option>Мужской</option>
+					<option>Женский</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	
+	<table id="driver5" class="tableDriver">
+		<tr>
+			<td class="header" colspan="2">
+				Водитель 5 [<a href="#" onclick="removeDriver(5);">удалить</a>]
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Фамилия
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Имя
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Отчество
+			</td>
+			<td class="inp">
+				<input type="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="lbl">
+				Пол
+			</td>
+			<td class="inp">
+				<select>
+					<option> </option>
+					<option>Мужской</option>
+					<option>Женский</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	
+	<a href="#" onclick="addDriver();" id="lnkAddDriver" style="display: block ;margin-top:15px;">+ Добавить водителя</a>
+	<div id="Polis">
+      <div id="okno">
+        <b><big>Заказ отправлен на рассмотрение</big></b><br>
+        <a href="#" class="close">Закрыть окно</a>
+      </div>
+    </div>
+<a href="#Polis"><p><input type="submit" style="background: #fdeaa8; width: 500px; height: 40px; border-radius: 5px; box-shadow: 0px 1px 3px; font-size: 20px; value="Заказать полис"></p></a>
+</body>
+</html>
