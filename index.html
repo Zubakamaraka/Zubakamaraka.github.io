@@ -5,7 +5,7 @@
 
 <script type="text/javascript">
 	var totalDrivers = 5;
-	var addedDrivers = 0;
+	var addedDrivers = 1;
 	
 	function addDriver(){
 		if(addedDrivers >= totalDrivers){
@@ -130,7 +130,7 @@
 <body>
       <form action="handler.php">
      <p><b><big>Укажите вид заказываемого полиса автострахования</big></b></p>
-     <p><input name="Polis1" type="radio" value="Osago"> КАСКО</p>
+     <p><input name="Polis1" type="radio" checked="checked" value="Osago"> КАСКО</p>
      <p><input name="Polis1" type="radio" value="Kasko"> ОСАГО</p>
       </form> 
 	<table id="Avto">
@@ -284,7 +284,7 @@
 
 		<tr>
 			<td class="header" colspan="2">
-				Водитель 1 [<a href="#" onclick="removeDriver(1);">удалить</a>]
+				Водитель 1 
 			</td>
 		</tr>
 		<tr>
@@ -328,7 +328,7 @@
 	<table id="driver2" class="tableDriver">
 		<tr>
 			<td class="header" colspan="2">
-				Водитель 2 [<a href="#" onclick="removeDriver(2);">удалить</a>]
+				Водитель 2 [<a href="#" onclick="removeDriver(2); return false;">удалить</a>]
 			</td>
 		</tr>
 		<tr>
@@ -372,7 +372,7 @@
 	<table id="driver3" class="tableDriver">
 		<tr>
 			<td class="header" colspan="2">
-				Водитель 3 [<a href="#" onclick="removeDriver(3);">удалить</a>]
+				Водитель 3 [<a href="#" onclick="removeDriver(3); return false;">удалить</a>]
 			</td>
 		</tr>
 		<tr>
@@ -416,7 +416,7 @@
 	<table id="driver4" class="tableDriver">
 		<tr>
 			<td class="header" colspan="2">
-				Водитель 4 [<a href="#" onclick="removeDriver(4);">удалить</a>]
+				Водитель 4 [<a href="#" onclick="removeDriver(4); return false;">удалить</a>]
 			</td>
 		</tr>
 		<tr>
@@ -460,7 +460,7 @@
 	<table id="driver5" class="tableDriver">
 		<tr>
 			<td class="header" colspan="2">
-				Водитель 5 [<a href="#" onclick="removeDriver(5);">удалить</a>]
+				Водитель 5 [<a href="#" onclick="removeDriver(5); return false;">удалить</a>]
 			</td>
 		</tr>
 		<tr>
@@ -501,7 +501,8 @@
 		</tr>
 	</table>
 	
-	<a href="#" onclick="addDriver();" id="lnkAddDriver" style="display: block ;margin-top:15px;">+ Добавить водителя</a>
+	<a name="bottom" />
+	<a href="#bottom" onclick="addDriver();" id="lnkAddDriver" style="display: block ;margin-top:15px;">+ Добавить водителя</a>
 	<div id="Polis">
       <div id="okno">
         <b><big>Заказ отправлен на рассмотрение</big></b><br>
