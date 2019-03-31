@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo|Bowlby+One+SC|Russo+One');
+body {
+background-color: #fffafa;
+font-family: "Arimo";
+font-weight: 300;
+font-size: 16px;
+color: #000000;
+
+-webkit-font-smoothing: antialiased;
+-webkit-overflow-scrolling: touch;
+}
+
+h1{
+  font-family:"Arimo";
+  font-weight: 800;
+  color: #2F4F4F;
+}
+
+p{
+  line-height: 28px;
+  margin-bottom: 25px;
+}
+.centered{
+  text-align: center;
+}
+
+a {
+  color: #000000;
+}
+
+a:hover, a:focus{
+  text-decoration: underline;
+  outline: 1
+  color: #FF0000
+}
+
+hr{
+  display: block;
+  height: 1px;
+  border: 1px;
+  border-top: 1px solid #2d2d2d;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.navbar{
+  font-weight: 800;
+  font-size: 20px;
+  padding: 1px;
+}
+.navbar-inverse{
+  background: #D3D3D3;
+  border-color:#E6E6FA;
+
+}
+
+.navbar-inverse .navbar-nav > .active > a{
+  background-color: #D3D3D3;
+}
+
+.navbar-inverse .navbar-brand {
+color: #0000CD;
+font-weight: bolder;
+font-size: 30px;
+list-style-type: 1px;
+}
+
+.gallery{
+  margin: 10px 50px;
+  width: 250px;
+}
+.carousel-inner img{
+  width: 150px;
+  padding: 5px;
+  filter:grayscale(20%);
+  transition: 1s;
+}
+
+.gallery img:hover{
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+#wrapper {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+#rsb {
+    background-color: #E6E6FA;
+    width: 150px;
+	float: left;
+}
+
+#Главная{
+  position: relative;
+  float: inherit;
+  left: 100px;
+  top:120px;
+  color: #000000;
+  font-size: 25px;
+}
+
+#Товарыдляофиса{
+  position: relative;
+  float: inherit;
+  left:160px;
+  top:120px;
+  color: #000000;
+  font-size: 25px;
+}
+
+#Шредеры{
+  position: relative;
+  float: inherit;
+  left:220px;
+  top:120px;
+  color: #000000;
+  font-size: 25px;
+}
+
+#OfficeKit{
+  position: relative;
+  float: inherit;
+  left:800px;
+  top: 85px;
+  color: #000000;
+  font-size: 25px;
+}
+
+.star-small{
+  color:#f7941e;
+}
+
+.empty-star{
+  color:#555;
+  background-color: #fff;
+}
+
+.date{
+	font-size: 11px;
+	padding-left: 10px;
+}
+
+.star{
+  color:#f7941e;
+  font-size: 25px;
+}
+
+.halfstar{
+  color:#f7941e;
+  font-size: 25px;
+}
+
+#footer{
+	height: 140px;
+	background-color: #aaa;
+  color:#808080;
+	margin-top: 20px;
+}
+
+#navbarSupportedContent{
+	font-size: 16px;
+	background-color: #D5D5E9;
+}
+
+#Ссылка1{
+  font-size:16px;
+  color:#FF0000;
+}
+
+#Цена{
+  font-family: "Arimo";
+  font-size: 50px;
+  color:#FF0000;
+}
+
+#Купить{
+border-radius: 7px;
+-webkit-box-shadow: inset 0 1px 0 rgba(250, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+color: #fff;
+width:150px;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 28px;
+padding: 5px 7px;
+margin: 5px auto;
+text-decoration: none;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: background-color 0.1s linear;
+-moz-transition: background-color 0.1s linear;
+-o-transition: background-color 0.1s linear;
+transition: background-color 0.1s linear;
+}
+#Купить{
+background-color: rgb( 230, 0, 0 );
+border: 3px solid rgb( 128, 0, 0 );
+}
+
+#Купить:hover {
+background-color: rgb( 255, 0, 0 );
+}
