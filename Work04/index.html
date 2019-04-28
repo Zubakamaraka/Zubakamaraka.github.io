@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/min.css">
+    <script src="js/min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Калькулятор</title>
+  </head>
+  <body>
+    <div id="box">
+    </div>
+    <div class="Калькулятор1">
+	<form name="calculator" id="calculator">
+		<input type="text" name="inputwindow" id="inputwindow">
+    <div id="Кнопки">
+
+      <div id="Цифры">
+        <div class="results">
+  			<button type="button" id="clear" value="" onclick="clearInput(document.getElementById('clear').value)">C</button>
+</div>
+<div>
+        <input type="button" id="root" value="√" onclick="putValue(this)">
+        <input type="button" id="degree" value="^" onclick="putValue(this)">
+        <input type="button" id="bracket1" value="(" onclick="putValue(this)">
+  			<input type="button" id="bracket2" value=")" onclick="putValue(this)">
+  	    </div>
+		<div>
+			<input type="button" id="one" value="1" onclick="putValue(this)">
+			<input type="button" id="two" value="2" onclick="putValue(this)">
+			<input type="button" id="three" value="3" onclick="putValue(this)">
+      <input type="button" id="plus" value="+" onclick="putValue(this)">
+	    </div>
+	    <div>
+			<input type="button" id="four" value="4" onclick="putValue(this)">
+			<input type="button" id="five" value="5" onclick="putValue(this)">
+			<input type="button" id="six" value="6" onclick="putValue(this)">
+			<input type="button" id="minus" value="-" onclick="putValue(this)">
+		</div>
+		<div>
+			<input type="button" id="seven" value="7" onclick="putValue(this)">
+			<input type="button" id="eight" value="8" onclick="putValue(this)">
+			<input type="button" id="nine" value="9" onclick="putValue(this)">
+			<input type="button" id="by" value="*" onclick="putValue(this)">
+	    </div>
+	    <div>
+			<input type="button" id="zero" value="0" onclick="putValue(this)">
+			<input type="button" id="decimal" value="." onclick="putValue(this)">
+      <input type="button" id="pm" value="+/-" onclick="putValue(this)">
+			<input type="button" id="devide" value="/" onclick="putValue(this)">
+
+	    </div>
+      <div>
+        <input type="button" id="equal" value="=" onclick="calculateResult()">
+  	    </div>
+    </div>
+    </div>
+	</form>
+    </div>
+  </body>
+</html>
