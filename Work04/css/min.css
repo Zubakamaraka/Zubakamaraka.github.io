@@ -37,7 +37,7 @@ box-shadow:         14px 14px 15px 0px rgba(50, 50, 50, 0.59);
   #inputwindow {
     position: absolute;
   	height: 50px;
-  	width: 19%;
+  	width: 250px;
   	background-color: #000000;
   	color: #fff;
   	padding: 12px 20px;
@@ -64,7 +64,7 @@ box-shadow:         14px 14px 15px 0px rgba(50, 50, 50, 0.59);
   #Кнопки {
     position: absolute ;
     top:200px;
-    left: 560px;
+    left: 570px;
   }
   #one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#zero,#decimal,#equal,#clear,#pm{
       font-weight: bolder;
